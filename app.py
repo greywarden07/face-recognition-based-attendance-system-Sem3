@@ -125,7 +125,7 @@ def deletefolder(duser):
 @app.route('/')
 def home():
     names, rolls, times, l = extract_attendance()
-    return render_template('home.html', names=names, rolls=rolls, times=times, l=l, totalreg=totalreg(), datetoday2=datetoday2)
+    return render_template('index.html', names=names, rolls=rolls, times=times, l=l, totalreg=totalreg(), datetoday2=datetoday2)
 
 
 ## List users page
@@ -224,7 +224,7 @@ def start():
     cap.release()
     cv2.destroyAllWindows()
     names, rolls, times, l = extract_attendance()
-    return render_template('home.html', names=names, rolls=rolls, times=times, l=l, totalreg=totalreg(), datetoday2=datetoday2)
+    return render_template('index.html', names=names, rolls=rolls, times=times, l=l, totalreg=totalreg(), datetoday2=datetoday2)
 # ...
 
 
@@ -262,7 +262,7 @@ def add():
     print('Training Model')
     train_model()
     names, rolls, times, l = extract_attendance()
-    return render_template('home.html', names=names, rolls=rolls, times=times, l=l, totalreg=totalreg(), datetoday2=datetoday2)
+    return render_template('index.html', names=names, rolls=rolls, times=times, l=l, totalreg=totalreg(), datetoday2=datetoday2)
 
 # ...
 
@@ -279,7 +279,7 @@ def register():
 
         return render_template('register_success.html', newusername=newusername, newuserid=newuserid)
 
-    return render_template('register.html', totalreg=totalreg())
+    return render_template('register1.html', totalreg=totalreg())
 
 # ...
 
